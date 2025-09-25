@@ -9,8 +9,12 @@ public class Ej6 {
             int numeroA = sc.nextInt();
         System.out.println("Introduce el segundo numero");
             int numeroB = sc.nextInt();
-            int prod = 0;
             int calc= 0;
+            for (int i = 0;  i < numeroB; i ++){
+                calc +=   numeroA ;
+
+            }
+        System.out.println("calculo " + calc);
 
         }
 }
