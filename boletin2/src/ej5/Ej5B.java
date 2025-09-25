@@ -8,16 +8,11 @@ public class Ej5B {
         int contador = 0;
         System.out.println("Introduce El primer numero");
         int num1 = sc.nextInt();
-        System.out.println("Introduce el segundo numero");
-        int num2 = sc.nextInt();
-        System.out.println("Introduce el tercer numero");
-        int num3 = sc.nextInt();
-        while (num1 < 0) {
-            System.out.println("El numero no es valido");
+        contador ++;
+        while (num1 >=0 ) {
             num1 = sc.nextInt();
+            contador ++;
         }
-        while (num2 < 0){
-
-        }
+        System.out.println("has introducido " + (contador -1) + " Positivos");
     }
 }
