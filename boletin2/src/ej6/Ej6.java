@@ -11,6 +11,6 @@ public class Ej6 {
             int numeroB = sc.nextInt();
             int prod = 0;
             int calc= 0;
-
+            
         }
 }
