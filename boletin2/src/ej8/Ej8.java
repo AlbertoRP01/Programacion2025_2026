@@ -5,19 +5,22 @@ import java.util.Scanner;
 public class Ej8 {
     static void main() {
         Scanner sc = new Scanner(System.in);
+        int menor = Integer.MAX_VALUE;
         int num;
-        char respuesta;
-        int  numeroIntroducido = 0;
-        do {
-            System.out.println("Introduce un numero");
+        String decision = "S";
+        while (decision.equals("S")) {
+            System.out.println("Dame un numero");
             num = sc.nextInt();
-            System.out.println("¿Quieres seguir introduciendo numeros? ");
-            respuesta = sc.next().charAt(0);
-            if (num > numeroIntroducido){
-                num = numeroIntroducido;
+            System.out.println("¿Quieres darme otro ? (S/N)");
+            if (decision.equals("N")) {
+                break;
             }
-        }while (respuesta != 'S');
-
-        System.out.println("El numero pequeño es " +  num);
+            if (num < menor) {
+                menor = num;
+            }
+            decision = sc.next();
+        }
+        System.out.println("El numero menor introducido es " + menor);
+        sc.close();
     }
 }

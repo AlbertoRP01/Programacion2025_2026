@@ -20,5 +20,6 @@ public class Ej7 {
         }else {
             System.out.println("Tienes una rentencion de 10.5 %");
         }
+        sc.close();
     }
 }

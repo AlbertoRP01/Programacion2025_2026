@@ -16,6 +16,6 @@ public class Ej5 {
 
         double resultado = num1+num2+ num3 + num4 / 4;
         System.out.println("El resultado es " + resultado);
-
+        sc.close();
     }
 }

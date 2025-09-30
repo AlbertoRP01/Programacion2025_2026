@@ -21,5 +21,6 @@ public class Ej9 {
                     double resultado = precioProducto * 0.9 /100;
                     System.out.println("La rebaja del producto es de 9% por lo tanto el precio del producto es de " +resultado);
                 }
+                sc.close();
             }
         }

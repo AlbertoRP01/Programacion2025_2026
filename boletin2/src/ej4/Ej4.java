@@ -13,5 +13,6 @@ public class Ej4 {
         int suma= num1 * (num1 + 1) /2;
             System.out.println(suma);
         }while (num1 <0 );
+        sc.close();
     }
 }

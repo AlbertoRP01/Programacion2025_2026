@@ -18,5 +18,6 @@ public class Ej2 {
         } else  {
             System.out.println(num1 + " Es menor que " +num2);
         }
+        sc.close();
     }
 }

@@ -14,5 +14,6 @@ public class Ej5B {
             contador ++;
         }
         System.out.println("has introducido " + (contador -1) + " Positivos");
+        sc.close();
     }
 }

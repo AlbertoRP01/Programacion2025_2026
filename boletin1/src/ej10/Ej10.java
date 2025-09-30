@@ -32,5 +32,6 @@ public class Ej10 {
             System.out.println("La raiz cuadrada de "  + num2+ " Es " + raiz2 );
 
         }
+        sc.close();
     }
 }

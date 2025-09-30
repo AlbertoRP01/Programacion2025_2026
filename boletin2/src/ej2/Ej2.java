@@ -11,5 +11,6 @@ public class Ej2 {
             int resultado = numero * i ;
             System.out.println( numero +  " * " + i + " = " + resultado );
         }
+        sc.close();
     }
 }

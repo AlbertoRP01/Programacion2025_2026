@@ -38,6 +38,6 @@ public class Ej8 {
 
             }
         }while (h1 >23 || h2 > 23 || min1 >59 || min2 > 59 || se1 > 59 || se2 > 59 );
-
+    sc.close();
     }
 }

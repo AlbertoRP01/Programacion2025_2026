@@ -16,5 +16,6 @@ public class Ej3 {
         }else {
             System.out.println( num + " No es multiplo de 2 ni de 3 ");
         }
+        sc.close();
     }
 }

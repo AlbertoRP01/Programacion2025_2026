@@ -20,5 +20,6 @@ public class Ej6 {
             }else {
                 System.out.println(caracter+ "No es una vocal");
             }
+            sc.close();
     }
 }

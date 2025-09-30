@@ -15,5 +15,6 @@ public class Ej7 {
         }
         double media = suma / cantidadIntroducir;
         System.out.println(media);
+        sc.close();
     }
 }

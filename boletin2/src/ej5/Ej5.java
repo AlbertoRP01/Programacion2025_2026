@@ -16,5 +16,6 @@ public class Ej5 {
             contador ++;
         } while ( num1 >= 0 );
         System.out.println("Has introducido "+ (contador   -1) + " numeros positivos");
+        sc.close();
     }
 }
