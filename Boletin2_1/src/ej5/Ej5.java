@@ -9,9 +9,7 @@ public class Ej5 {
         int exponenetes;
 
         do {
-
             numero = MiEntradaSalida.leerEntero("Introduce un numero");
-
         } while (numero <= 1);
 
         int numeroOriginal = numero;
@@ -24,21 +22,21 @@ public class Ej5 {
             exponenetes = 0;
 
             while (numero % i == 0) { //  Mientras que el divisor sea divisible por el divisor actual en la division sea 0
-
                 numero = numero / i;
                 exponenetes++; // autoincrementa el exponente
-
             }
+
             divisores = divisores * (exponenetes + 1); // calcular el total de los divisores multiplicadno el (exponente + 1)
+
         }
         if (numero > 1) { //
             divisores = divisores * 2;
         }
         if (divisores == 2) {
             System.out.println("Es primo");
-        } else if (divisores % 2 == 0 && numero !=2){
+        } else if (divisores % 2 == 0 && numero != 2) {
 
-            System.out.println( numeroOriginal + "No es primo");
+            System.out.println(numeroOriginal + "No es primo");
         }
 
     }
