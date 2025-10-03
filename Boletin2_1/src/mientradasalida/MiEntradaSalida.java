@@ -26,7 +26,15 @@ public class MiEntradaSalida {
         }
         return a;
     }
-
+    public static  double leerDecimales(String mensaje){
+        System.out.println("Introduce un numero decimal");
+        double a = sc.nextDouble();
+        while (a < 0){
+            System.out.println("El numero tiene que ser positivo");
+            a = sc.nextDouble();
+        }
+        return a;
+    }
     public static void main(String[] args) {
         int a = MiEntradaSalida.leerEnteroPositivo("Introduce un numero");
         System.out.printf("Numero introducido es %d", a);

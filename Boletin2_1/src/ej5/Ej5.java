@@ -12,7 +12,7 @@ public class Ej5 {
             numero = MiEntradaSalida.leerEntero("Introduce un numero");
         } while (numero <= 1);
 
-        int numeroOriginal = numero;
+        int numeroOriginal = numero; // vamos a necesitar una copia del numero original por que numero cambia su valor
 
         if (numero % 2 == 0 && numero != 2) { // esta condicion implemeta que el unico par que es primo es 2 y que los demas numero pares son divisores de dos por lo tanto no son primos
             System.out.println(numero + "No es primo");
@@ -22,7 +22,7 @@ public class Ej5 {
             exponenetes = 0;
 
             while (numero % i == 0) { //  Mientras que el divisor sea divisible por el divisor actual en la division sea 0
-                numero = numero / i;
+                numero = numero / i; // divides el numero entre el divisor actual
                 exponenetes++; // autoincrementa el exponente
             }
 
