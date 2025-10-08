@@ -3,7 +3,7 @@ package ej3;
 import mientradasalida.MiEntradaSalida;
 
 public class Ej3 {
-   public static void main(String[] args) {
+    static void main(String[] args) {
        int numero = MiEntradaSalida.leerEnteroPositivo("Introduce un numero");
        String binario = "";
        int bit = numero % 2;
