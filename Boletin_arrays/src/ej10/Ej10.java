@@ -19,22 +19,21 @@ public class Ej10 {
             sc.next();
         }
 
-        // --- INICIO DEL PROCESO COMPLETO ---
-        System.out.println("\n--- 1. PROCESO ASCENDENTE (reverse = false) ---");
 
-        // PASO A: Pedir los datos al usuario
+
+        // Pedir los datos al usuario
         int[] arrayOriginal = pedirArray(sc, tamanno);
         System.out.println("Array Original (con duplicados): " + Arrays.toString(arrayOriginal));
 
-        // PASO B: Eliminar los duplicados
+        // Eliminar los duplicados
         int[] arrayLimpio = eliminarDuplciados(arrayOriginal);
         System.out.println("Array sin Duplicados: " + Arrays.toString(arrayLimpio));
 
-        // PASO C: Ordenar el array limpio (Ascendente = false)
+        //  Ordenar el array limpio (Ascendente = false)
         int[] arrayFinalAsc = ordenarArray(arrayLimpio, false);
         System.out.println("Array Final Ordenado Ascendente: " + Arrays.toString(arrayFinalAsc));
 
-        // --- SEGUNDA PRUEBA: DESCENDENTE ---
+        // SEGUNDA PRUEBA: DESCENDENTE
         // (Reutilizamos el array limpio del primer paso)
         System.out.println("\n--- 2. PRUEBA DESCENDENTE (reverse = true) ---");
         int[] arrayFinalDesc = ordenarArray(arrayLimpio, true);
@@ -67,7 +66,7 @@ public class Ej10 {
 
         int conteoUnicos = 0;
         // CONTAR ÚNICOS
-        // (Necesitamos el conteo para saber el tamaño exacto del nuevo array)
+        // (Necesita el conteo para saber el tamaño exacto del nuevo array)
         for (int i = 0; i < array.length; i++) {
             boolean esDuplicado = false;
 
@@ -84,7 +83,7 @@ public class Ej10 {
             }
 
         }
-        // Creamos el array de destino con el tamaño que acabamos de calcular.
+        // Crea el array de destino con el tamaño que acabamos de calcular.
         int[] arraySinduplciados = new int[conteoUnicos];
         int indice = 0; // Rastrea dónde guardar en el array nuevo.
 
@@ -111,7 +110,7 @@ public class Ej10 {
     public  static int[] ordenarArray(int[]array, boolean reverse){
         //creamos una capia del array para no modificar el original
         array = Arrays.copyOf(array, array.length);
-        // 2. Ordenación manual con Selection Sort (Controlada por 'reverse')
+        //  Ordenación manual con Selection Sort (Controlada por 'reverse')
         for (int i = 0; i < array.length - 1; i++) {
 
             int indiceExtremo = i;

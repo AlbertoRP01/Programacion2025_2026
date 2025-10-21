@@ -7,6 +7,6 @@ public class Ej1 {
         for (int i = 0; i < numeros.length; i += 2){
             sumaPares += numeros[i];
         }
-        System.out.println("La de posociones de los pares seria " + sumaPares);
+        System.out.println("La de posiciones de los pares seria " + sumaPares);
     }
 }
