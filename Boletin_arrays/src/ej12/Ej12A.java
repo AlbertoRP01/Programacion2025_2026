@@ -5,6 +5,11 @@ public class Ej12A {
 
     }
 
+    /**
+     * TODO:En este metodo se realiza la ordenacion en burbuja sin utilizar booleanos para terminar el ciclo del bucle
+     * @param array la variable en el parametro
+     * @return devuelve el array
+     */
     public static int[] metodoBurbuja(int[] array) {
         boolean cambio = false;
         int temporal = 0;

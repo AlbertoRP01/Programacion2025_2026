@@ -9,6 +9,13 @@ public class Ej12B {
         System.out.println(Arrays.toString(metodoBurbuja(array)));
     }
 
+    /**
+     *TODO: En este metodo devuelve el array ordenador con el metodo burbuja, pero esta vez utilizamos booleano
+     * para que en el caso de que no haya cambios automaticamente cierra el bucle y se queda el array como está
+     *
+     * @param array variable en el parametro
+     * @return devuelve el array
+     */
     public static int[] metodoBurbuja(int[] array) {
         boolean cambio = false;
         int temporal = 0;
@@ -16,12 +23,12 @@ public class Ej12B {
             for (int j = 0; j < array.length - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
                     temporal = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temporal;
+                    array[j] = array[j + 1];
+                    array[j + 1] = temporal;
                     cambio = true;
                 }
             }
-            if (!cambio){
+            if (!cambio) {
                 break;
             }
         }
