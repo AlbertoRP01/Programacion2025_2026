@@ -22,7 +22,7 @@ public class Ej11 {
     /**
      *
      * @param array1 array 1
-     * @param array2
+     * @param array2 array 2
      * @return
      */
     public static int[] elementosEnComun(int[] array1, int[] array2) {
