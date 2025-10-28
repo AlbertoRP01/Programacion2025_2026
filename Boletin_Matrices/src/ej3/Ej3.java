@@ -6,7 +6,6 @@ public class Ej3 {
         imprimirMatrizEnUnaLinea(matriz);
     }
 
-
     /**
      * TODO: Imprime esta matriz en solo una linea utilizando el print
      * @param matriz la variable del  parametro
