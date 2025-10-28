@@ -12,6 +12,7 @@ public class Ej7 {
         System.out.println(comprobarDosMatricesIguales(matriz, matriz2));
     }
 
+
     public static boolean comprobarDosMatricesIguales(int[][] matriz1, int[][] matriz2) {
         boolean sonIguales = true;
         for (int i = 0; i < matriz1.length; i++) {

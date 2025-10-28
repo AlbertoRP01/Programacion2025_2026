@@ -6,6 +6,7 @@ public class Ej6 {
         recorrerPorcolumna(matriz);
     }
 
+
     public static void recorrerPorcolumna(int[][] matriz) {
         for (int j = matriz[0].length - 1; j >= 0; j--) {
             for (int i = matriz.length - 1; i >= 0; i--) {

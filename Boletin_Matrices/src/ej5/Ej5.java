@@ -8,6 +8,7 @@ public class Ej5 {
         recorrePorColumnas(matriz);
     }
 
+
     public static void recorrePorColumnas(int[][] matriz) {
         for (int j = 0; j < matriz[0].length; j ++) {
             for (int i = 0; i <  matriz.length; i ++) {

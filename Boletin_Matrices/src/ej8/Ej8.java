@@ -32,6 +32,7 @@ public class Ej8 {
                 matriz3[i][j]= suma;
             }
         }
+
         System.out.println("\t\t\t1\t\t\t\t\t2\t\t\t\tSuma");
         System.out.println();
         // Finalmente imprimir los resultados

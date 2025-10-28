@@ -11,6 +11,7 @@ public class Ej2 {
         System.out.println("La suma total de los elementos de la matriz es " + sumaPosicionesMatriz(matriz));
     }
 
+
     /**
      * TODO: SUMA EL TOTAL DE LOS ELEMENTOS DE LA MATRIZ
      * @param matriz
