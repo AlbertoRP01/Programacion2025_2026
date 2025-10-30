@@ -1,65 +1,21 @@
 package ej3;
 
-import mientradasalida.MiEntradaSalida;
-
-import java.util.Scanner;
-
 public class Ej3 {
-    public static final int M = 1000;
-    public static   final int D = 500;
-    public static final int C = 100;
-    public static final int L = 50;
-    public static final int X = 10;
-    public static final int V = 5;
-    public static final int I = 1;
-
     static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String numRomano;
-        int acumulado = 0;
-        int temporal = 0;
-        int anterior = Integer.MAX_VALUE;
-        System.out.println("Introduce el numero romano: "); // pido el numero romano
-        numRomano = sc.nextLine(); // introduzco el numero romano
+        int[][] matriz = {{1, 2,3}, {0,2,7}};
+        imprimirMatrizEnUnaLinea(matriz);
+    }
 
-        for (int i = 0; i < numRomano.length(); i++) { // busco la letra del numero
-            char letraActual = numRomano.charAt(i);
-            int valorLetra = 0;
-            int a = switch (letraActual) {
-                case 'M':
-                    yield M;
-                case 'D':
-                    yield D;
-                case 'C':
-                    yield C;
-                case 'L':
-                    yield L;
-                case 'X':
-                    yield X;
-                case 'V':
-                    yield V;
-                case 'I':
-                    yield I;
-                default:
-                    yield 0;
-            };
-            if (valorLetra < anterior) {
-                if (temporal > 0) { // en el caso de que ese numero sea mayor que el anterior en todo caso se passa al acumulador sumando al temporal y que el temporal sea igual al valor de la letra para indicar que esa letra es ese numero
-                    acumulado += temporal;
-                }
-                temporal = valorLetra;
-            } else if (valorLetra == anterior) { // en el caso de que el valor de esa letra se la misma que el anterior lo que hace es que el acumulador guarde la suma del numero temporal y el de la letra
-                acumulado += temporal + valorLetra;
-                temporal = 0;
-            } else { // en el caso de que no sea la condicion anterior,  el acumulador guarda la resta del valor de esa letra y el numero temporal y le damos el valor a temporal que es  0
-                acumulado += valorLetra - temporal;
-                temporal = 0;
+    /**
+     * TODO: Imprime esta matriz en solo una linea utilizando el print
+     * @param matriz la variable del  parametro
+     */
+    public static void imprimirMatrizEnUnaLinea(int[][] matriz){
+        for (int i = 0; i < matriz.length; i ++){
+            for (int j = 0 ; j < matriz[i].length; j ++){
+                System.out.print(matriz[i][j] + " ");
             }
-            anterior = valorLetra;
         }
-        if (temporal > 0) { // en
-            acumulado *= temporal;
-        }
-        System.out.printf("El numero %s en decimal es %d", numRomano, acumulado);
+        System.out.println();
     }
 }
