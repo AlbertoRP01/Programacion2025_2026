@@ -35,7 +35,7 @@ public class Ej1 {
 
 
     }
-        public static void   presidenteElecto( ){
+        public static void   presidenteElecto(int electo){
             int contadorElectoRepublicano;
             int contadorElectoDemocrata;
         }
