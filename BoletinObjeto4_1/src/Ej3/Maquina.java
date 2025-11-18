@@ -1,6 +1,7 @@
 package Ej3;
 
 public class Maquina {
+    // Constantes
     private final int MAX_CAFE = 50;
     private final int MAX_LECHE = 50;
     private final int MAX_VASO = 80;
@@ -8,11 +9,13 @@ public class Maquina {
     private final double PRECIO_LECHE = 0.8;
     private final  double PRECIO_CAFE_LECHE = 1.5;
 
+    //Atributos
     private int dosisCafe;
     private int dosisLeche;
     private int vaso;
     private double monedero;
 
+    //Constructor
     public Maquina() {
         this.dosisCafe = MAX_CAFE;
         this.dosisLeche = MAX_LECHE;

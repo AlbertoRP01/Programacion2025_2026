@@ -1,4 +1,6 @@
-package Ej1.main;
+package Ej1.rectangulo;
+
+import Ej1.exception.RectanguloException;
 
 public class Rectangulo {
 

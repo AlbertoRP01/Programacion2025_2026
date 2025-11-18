@@ -13,7 +13,7 @@ public class MiEntradaSalida {
      */
 
     public static int leerEntero(String mensaje) {
-        System.out.println("Introduce un numero: ");
+        System.out.println(mensaje);
         return sc.nextInt();
     }
 
@@ -23,7 +23,7 @@ public class MiEntradaSalida {
      * @return el enetero leido por teclado
      */
     public static int leerEnteroPositivo(String mensaje) {
-        System.out.println("Introduce un numero positivo");
+        System.out.println(mensaje);
         int a = sc.nextInt();
         while (a < 0) {
             System.out.println("El  numero tiene que ser  positivo: ");

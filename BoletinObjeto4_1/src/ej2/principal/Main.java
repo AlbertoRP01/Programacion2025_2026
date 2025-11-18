@@ -1,10 +1,12 @@
-package ej2;
+package ej2.principal;
 
+import ej2.cuenta.CuentaCorriente;
+import ej2.exceptions.CuentaCorrienteException;
 import mientradasalida.MiEntradaSalida;
 
 public class Main {
     public static void main(String[] args) {
-        CuentaCorriente cuentaCorriente = new CuentaCorriente(100);
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(1000);
         int opcion = 0;
         boolean salir = false;
         do {
@@ -16,7 +18,7 @@ public class Main {
                     int cantidadRetirar = MiEntradaSalida.leerEntero("Introduce la cantidad a retirar");
                     try {
                         cuentaCorriente.hacerReintegro(cantidadRetirar);
-                    } catch (Exception e) {
+                    } catch (CuentaCorrienteException e) {
                         System.out.println(e.getMessage());
                     }
 
@@ -25,7 +27,7 @@ public class Main {
                     try {
                         int cantidadIngresar = MiEntradaSalida.leerEntero("Introduce la cantidad que quieres ingresar");
                         cuentaCorriente.hacerIngreso(cantidadIngresar);
-                    } catch (Exception e) {
+                    } catch (CuentaCorrienteException e) {
                         System.out.println(e.getMessage());
                     }
                 }
@@ -35,10 +37,8 @@ public class Main {
                 case 4 -> {
                     String confirmacion = String.valueOf((MiEntradaSalida.solicitarCaracterSN("¿Quieres salir S/N ?")));
                     if (confirmacion.equalsIgnoreCase("S")) {
-                        // 2. Imprimir el saldo final (Asumiendo que 'cuentaCorriente' ya existe)
                         System.out.println(" Operaciones finalizadas. Saldo final: " + cuentaCorriente.getSaldo() + " €");
 
-                        // 3. Establecer la bandera para salir del bucle
                         salir = true;
                     } else {
                         System.out.println("Operación cancelada. Volviendo al menú.");
@@ -51,6 +51,9 @@ public class Main {
         } while (!salir);
     }
 
+    /**
+     * Te muestra el menu de la cuenta corriente
+     */
     private static void menu() {
         System.out.println("------------MENU------------");
         System.out.println("1. Hacer un reintegro");

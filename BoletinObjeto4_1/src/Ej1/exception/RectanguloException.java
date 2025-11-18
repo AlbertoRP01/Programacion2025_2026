@@ -1,4 +1,4 @@
-package Ej1.main;
+package Ej1.exception;
 
 public class RectanguloException extends Exception {
 
