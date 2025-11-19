@@ -53,7 +53,7 @@ public class CuentaCorriente {
      */
     public int hacerIngreso(int cantidadIngresar) throws CuentaCorrienteException {
         if (cantidadIngresar <= 0) {
-            throw new CuentaCorrienteException("No se puedes ingresar numeros negativos en su cuenta");
+            throw new CuentaCorrienteException("No se puedes ingresar numeros negativos o 0 en su cuenta");
 
         }
         this.saldo += cantidadIngresar;
