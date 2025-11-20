@@ -2,8 +2,8 @@ package Ej3.maquina;
 
 import Ej3.excepciones.MaquinaException;
 import mientradasalida.MiEntradaSalida;
+import org.w3c.dom.ls.LSOutput;
 
-import java.lang.classfile.constantpool.InterfaceMethodRefEntry;
 
 public class Maquina {
     // Constantes
@@ -28,7 +28,7 @@ public class Maquina {
     }
 
     public Maquina(double monederoInicial) {
-        monedero = Math.max(1.50, monederoInicial);
+        monedero = Math.max(5, monederoInicial);
     }
 
     public int getDosisCafe() {
@@ -67,22 +67,22 @@ public class Maquina {
      */
     public void servirCafe() throws MaquinaException {
         double cambio = 0;
-        double importe = MiEntradaSalida.leerDecimales("Introduce el importe del cafe");
-        if (importe < PRECIO_CAFE) {
-            throw new MaquinaException("El importe debe ser: " + PRECIO_CAFE);
+        double importe = 0;
+        while (importe >= PRECIO_CAFE){
+            importe = MiEntradaSalida.solicitarDouble("Introduce el importe del cafe (" + PRECIO_CAFE + "): ");
         }
         if (importe > PRECIO_CAFE) {
-            cambio = monedero - importe;
+            cambio = importe - PRECIO_CAFE;
             if (monedero < cambio) {
                 throw new MaquinaException("No puede devolver el cambio no hay  monedas en el monedero");
             }
             monedero += PRECIO_CAFE;
             monedero -= cambio;
-            System.out.printf("cambio devuelto: %.2f" + cambio + "€");
-            System.out.println("Disfrute de su cafe");
+            System.out.printf("cambio devuelto: %.2f€", cambio);
+            System.out.println(" Disfrute de su cafe");
         } else {
             monedero += PRECIO_CAFE;
-            System.out.printf("Disfrute de su cafe");
+            System.out.println(" Disfrute de su cafe");
         }
         dosisCafe--;
         vaso--;
@@ -95,18 +95,18 @@ public class Maquina {
      */
     public void servirLeche() throws MaquinaException {
         double cambio = 0;
-        double importe = MiEntradaSalida.leerDecimales("Introduce el importe de su leche");
-        if (importe < PRECIO_LECHE) {
-            throw new MaquinaException("El importe debe ser: " + PRECIO_LECHE);
+        double importe = 0;
+        while (importe >= PRECIO_LECHE){
+             importe = MiEntradaSalida.solicitarDouble("Introduce el importe de su leche");
         }
         if (importe > PRECIO_LECHE) {
-            cambio = monedero - importe;
+            cambio = importe - PRECIO_LECHE;
             if (monedero < cambio) {
                 throw new MaquinaException("No puede devolver el cambio no hay  monedas en el monedero");
             }
             monedero += PRECIO_LECHE;
             monedero -= cambio;
-            System.out.printf("cambio devuelto: %.2f" + cambio + "€");
+            System.out.printf("cambio devuelto: %.2f€", cambio);
             System.out.println("disfrute de su leche ");
         } else {
             monedero += PRECIO_LECHE;
@@ -123,19 +123,22 @@ public class Maquina {
      */
     public void servirCafeLeche() throws MaquinaException {
         double cambio = 0;
-        double importe = MiEntradaSalida.leerDecimales("Introduce el importe del cafe con leche");
+        double importe = 0;
+        while (importe >= PRECIO_CAFE_LECHE){
+            importe  = MiEntradaSalida.solicitarDouble( "Introduce el importe del cafe con leche");
+        }
         if (importe < PRECIO_CAFE_LECHE) {
             throw new MaquinaException("El importe debe ser: " + PRECIO_CAFE_LECHE);
         }
 
         if (importe > PRECIO_CAFE_LECHE) {
-            cambio = monedero - importe;
+            cambio = importe  - PRECIO_CAFE_LECHE;
             if (monedero < cambio) {
                 throw new MaquinaException("No puede devolver el cambio no hay  monedas en el monedero");
             }
             monedero += PRECIO_CAFE_LECHE;
             monedero -= cambio;
-            System.out.printf("cambio devuelto: %.2f" + cambio + "€");
+            System.out.printf("cambio devuelto: %.2f€", cambio);
             System.out.printf("Disfrute de su cafe con leche");
         } else {
             monedero += PRECIO_CAFE_LECHE;
@@ -148,16 +151,29 @@ public class Maquina {
     }
 
     public void LlenarDepositos(){
+        if (dosisCafe == MAX_CAFE){
+            System.out.println("Deposito lleno");
+        }
+        if (dosisLeche == MAX_LECHE){
+            System.out.println("Deposito lleno");
+        }
+        if (vaso == MAX_VASO){
+            System.out.println("Deposito lleno");
+        }
+        dosisCafe += MAX_CAFE;
+        dosisLeche += MAX_LECHE;
+        vaso += MAX_VASO;
 
     }
 
     @Override
     public String toString() {
-        return "Maquina{" +
-                String.format("deposito de cafe: %d\n" + dosisCafe) +
-                String.format(", deposito de leche: %d\n" + dosisLeche) +
-                String.format(", deposito de vaso:%d\n" + vaso) +
-                String.format(", monedero actual de la maquina: %.2f\n" + monedero) +
+        return "Maquina:"+
+                String.format(", monedero actual de la maquina: %.2f\n",monedero) +
+                String.format("deposito de cafe: %d\n",dosisCafe) +
+                String.format(", deposito de leche: %d\n",dosisLeche) +
+                String.format(", deposito de vaso:%d\n", vaso) +
+
                 '}';
     }
 }

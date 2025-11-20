@@ -37,14 +37,22 @@ public class MiEntradaSalida {
      * @param mensaje // el mensaje que tengas que introducir
      * @return devuelve el numero decimal
      */
-    public static double leerDecimales(String mensaje) {
-        System.out.println(mensaje);
-        double a = sc.nextDouble();
-        while (a < 0) {
-            System.out.println("El numero tiene que ser positivo");
-            a = sc.nextDouble();
+    public static double solicitarDouble(String mensaje) {
+        double numero = 0.0;
+        boolean flag = true;
+
+        while (flag) {
+            System.out.println(mensaje);
+            try {
+                // Acepta números como "5" o "5.5"
+                numero = sc.nextDouble();
+                flag = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Debe introducir un número válido (entero o decimal).");
+            }
         }
-        return a;
+
+        return numero;
     }
 
     /**
@@ -76,7 +84,7 @@ public class MiEntradaSalida {
      */
     public static String leerCadena(String mensaje) {
         System.out.println(mensaje);
-        return sc.nextLine().toUpperCase();
+        return sc.next().toUpperCase();
     }
 
     /**
@@ -120,7 +128,7 @@ public class MiEntradaSalida {
             // Pedimos el carácter por pantalla.
             System.out.println(mensaje);
 
-            String cadena = sc.nextLine();
+            String cadena = sc.next();
 
             // Comprobamos que la longitud sea de 1 solo carácter.
             if (cadena.length() == 1) {
@@ -154,7 +162,7 @@ public class MiEntradaSalida {
 
             try {
                 // Obtenemos el primer carácter de la línea.
-                c = sc.nextLine().charAt(0);
+                c = sc.next().charAt(0);
                 // Si llegamos hasta aquí, es porque el usuario ha introducido un dato correcto.
                 flag = false;
             }
