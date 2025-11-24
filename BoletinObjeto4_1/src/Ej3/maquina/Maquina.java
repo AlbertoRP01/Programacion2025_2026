@@ -110,7 +110,7 @@ public class Maquina {
             System.out.println("disfrute de su leche ");
         } else {
             monedero += PRECIO_LECHE;
-            System.out.printf("Disfrute de su leche");
+            System.out.println("Disfrute de su leche");
         }
         dosisLeche--;
         vaso--;
