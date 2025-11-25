@@ -25,10 +25,10 @@ public class DiscoDuro {
 
     @Override
     public String toString() {
-        return "DiscoDuro:" +
-                "marca='" + marca + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", capacidad=" + capacidad +
+        return "DiscoDuro:\n" +
+                String.format("marca: %s\n", getMarca()) +
+                String.format("Tipo: %s \n", getTipo()) +
+                String.format(" capacidad: %d", getCapacidad()) +
                 '.';
     }
 }

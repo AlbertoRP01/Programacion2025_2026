@@ -24,19 +24,32 @@ public class PlacaBase {
     public String getSocket() {
         return socket;
     }
-    public String compatible(Microprocesador microprocesador) throws PlacaBaseException {
-        if (!this.socket.equalsIgnoreCase(microprocesador.getSocket())){
-            throw new PlacaBaseException("El socket no es compatible");
-        }
-        return this.socket;
+
+    /**
+     * TODO: Este método booleano devuelve la compatibilidad de ambos comonentes
+     * @param microprocesador
+     * @return devuelve en el caso de que el microprocesador sea compatible con la placa base
+     */
+    public boolean compatible(Microprocesador microprocesador)  {
+        return this.socket.equalsIgnoreCase(microprocesador.getSocket());
     }
 
+    /**
+     * TODO: Aqui en este metodo es si es compatible la placa  base con el procesador
+     * @param microprocesador
+     * @throws PlacaBaseException en el caso de que no encuentre compatibilidad lanza excepción
+     */
+    public void compatible2(Microprocesador microprocesador) throws PlacaBaseException {
+        if (!this.socket.equalsIgnoreCase(microprocesador.getSocket())){
+            throw new PlacaBaseException("El microprocesador no es compatible con la placa Base");
+        }
+    }
     @Override
     public String toString() {
-        return "PlacaBase:" +
-                "marca='" + marca + '\'' +
-                ", chipset='" + chipset + '\'' +
-                ", socket='" + socket + '\'' +
+        return "PlacaBase:\n" +
+                String.format("Marca: %s\n", getMarca()) +
+                String.format("Chipset: %s \n", getChipset()) +
+                String.format("Socket: %s",getSocket()) +
                 '.';
     }
 }

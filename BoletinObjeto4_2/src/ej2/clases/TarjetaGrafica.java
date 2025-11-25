@@ -37,12 +37,12 @@ public class TarjetaGrafica {
 
     @Override
     public String toString() {
-        return "TarjetaGrafica:" +
-                "cadena='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", numNucleos=" + numNucleos +
-                ", velocidad=" + velocidad +
-                ", cantidad=" + cantidad +
+        return "TarjetaGrafica:\n" +
+                String.format("cadena: %s\n", getMarca()) +
+                String.format("Modelo: %s\n", getModelo()) +
+                String.format("NumNucleos: %d\n", getNumNucleos()) +
+                String.format("Velocidad: %.2f\n", getVelocidad()) +
+                String.format("Cantidad %d",getCantidad()) +
                 '.';
     }
 }

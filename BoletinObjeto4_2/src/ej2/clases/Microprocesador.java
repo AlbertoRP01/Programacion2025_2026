@@ -37,12 +37,12 @@ public class Microprocesador {
 
     @Override
     public String toString() {
-        return "Microprocesador:" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", numNucleos=" + numNucleos +
-                ", velocidadBase=" + velocidadBase +
-                ", socket='" + socket + '\'' +
+        return "Microprocesador:\n" +
+                String.format("Marca: %s\n", getMarca()) +
+                String.format("Modelo:%s\n", getModelo()) +
+                String.format("NumNucleos: %d\n", getNumNucleos()) +
+                String.format("VelocidadBase: %.2f\n", getVelocidadBase()) +
+                String.format("Socket: %s",getSocket())+
                 '.';
     }
 }
