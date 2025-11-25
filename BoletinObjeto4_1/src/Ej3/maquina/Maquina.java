@@ -26,11 +26,12 @@ public class Maquina {
         this.dosisLeche = MAX_LECHE;
         this.vaso = MAX_VASO;
     }
-
+    //constructor
     public Maquina(double monederoInicial) {
         monedero = Math.max(5, monederoInicial);
     }
 
+    //getters
     public int getDosisCafe() {
         return dosisCafe;
     }
@@ -150,6 +151,9 @@ public class Maquina {
 
     }
 
+    /**
+     * rellena los deposito en el caso de que cada elemento contenga menos que la cantidad maxima
+     */
     public void LlenarDepositos(){
         if (dosisCafe == MAX_CAFE){
             System.out.println("Deposito lleno");
@@ -169,10 +173,10 @@ public class Maquina {
     @Override
     public String toString() {
         return "Maquina:"+
-                String.format(", monedero actual de la maquina: %.2f\n",monedero) +
-                String.format("deposito de cafe: %d\n",dosisCafe) +
-                String.format(", deposito de leche: %d\n",dosisLeche) +
-                String.format(", deposito de vaso:%d\n", vaso) +
+                String.format(", monedero actual de la maquina: %.2f\n",getMonedero()) +
+                String.format("deposito de cafe: %d\n",getDosisCafe()) +
+                String.format(", deposito de leche: %d\n",getDosisLeche()) +
+                String.format(", deposito de vaso:%d\n", getVaso()) +
 
                 '}';
     }
