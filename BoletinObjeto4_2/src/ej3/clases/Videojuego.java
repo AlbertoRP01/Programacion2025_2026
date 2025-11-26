@@ -8,6 +8,7 @@ import ej3.excepciones.VideojuegoExcepcion;
 import java.time.Year;
 
 public class Videojuego {
+    //Atributos
     private String nombre;
     private String companiaCreadora;
     private Year annoCreacion;
@@ -17,6 +18,7 @@ public class Videojuego {
     private int numNucleosGpuMin;
     private int memoriaMin;
 
+    //constructor
     public Videojuego(String nombre, String companiaCreadora, Year annoCreacion, int numNucleosCpu, float velocidadCpu, int espacioDiscoDuro, int numNucleosGpuMin, int memoriaMin) {
         this.nombre = nombre;
         this.companiaCreadora = companiaCreadora;
@@ -28,6 +30,7 @@ public class Videojuego {
         this.memoriaMin = memoriaMin;
     }
 
+    //getters
     public String getNombre() {
         return nombre;
     }
@@ -60,6 +63,13 @@ public class Videojuego {
         return memoriaMin;
     }
 
+    /**
+     *
+     * @param microprocesador
+     * @param discoDuro
+     * @param tarjetaGrafica
+     * @throws VideojuegoExcepcion
+     */
     public void requisitosMinimos(Microprocesador microprocesador, DiscoDuro discoDuro, TarjetaGrafica tarjetaGrafica) throws VideojuegoExcepcion {
         if (microprocesador.getNumNucleos() < this.numNucleosCpu && microprocesador.getVelocidadBase() < this.velocidadCpu) {
             throw new VideojuegoExcepcion("No cumple con los requisitos del videojuego");
@@ -75,14 +85,14 @@ public class Videojuego {
     @Override
     public String toString() {
         return "Requisitos del Videojuego:\n" +
-                String.format("nombre: %s\n", getNombre()) +
+                String.format("nombre: %s\n", getAnnoCreacion()) +
                 String.format(", companiaCreadora: %s\n", getCompaniaCreadora()) +
-                String.format(", annoCreacion:  " , getAnnoCreacion())+
-                String.format(", numNucleosCpu: %d\n",getNumNucleosCpu()) +
+                String.format(", annoCreacion:  ", getAnnoCreacion()) +
+                String.format(", numNucleosCpu: %d\n", getNumNucleosCpu()) +
                 String.format(", velocidadCpu: %.2f\n", getVelocidadCpu()) +
                 String.format(", espacioDiscoDuro: %d\n", getEspacioDiscoDuro()) +
                 String.format(", numNucleosGpuMin: %d\n", getNumNucleosGpuMin()) +
-                String.format(", memoriaMin: %d",getMemoriaMin()) +
+                String.format(", memoriaMin: %d", getMemoriaMin()) +
                 '.';
     }
 }

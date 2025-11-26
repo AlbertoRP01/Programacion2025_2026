@@ -35,6 +35,7 @@ public class Microprocesador {
         return socket;
     }
 
+
     @Override
     public String toString() {
         return "Microprocesador:\n" +
