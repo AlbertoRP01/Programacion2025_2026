@@ -41,21 +41,20 @@ public class MiEntradaSalida {
      * @return devuelve el numero decimal
      */
     public static double solicitarDouble(String mensaje) {
-        double numero = 0.0;
+        double decimal = 0.0;
         boolean flag = true;
 
         while (flag) {
             System.out.println(mensaje);
             try {
-                // Acepta números como "5" o "5.5"
-                numero = sc.nextDouble();
+                // 🎯 Usamos Double.parseDouble(sc.nextLine())
+                decimal = Double.parseDouble(sc.nextLine());
                 flag = false;
             } catch (NumberFormatException e) {
-                System.out.println("Error: Debe introducir un número válido (entero o decimal).");
+                System.out.println("❌ Error: Debe introducir un número válido. Utiliza el PUNTO '.' como separador decimal.");
             }
         }
-
-        return numero;
+        return decimal;
     }
     public static float solicitarFloat(String mensaje) {
         float numero = 0.0f;
@@ -101,9 +100,29 @@ public class MiEntradaSalida {
      * @param mensaje mostando un mensaje que escriba
      * @return devuelve la cadena y la trnasforma en mayuscula
      */
-    public static String leerCadena(String mensaje) {
-        System.out.println(mensaje);
-        return sc.next().toUpperCase();
+    public static String solicitarCadena(String mensaje) {
+        String cadena = "";
+        // Variable que almacenará un booleano que indicará si se le debe volver a pedir el dato al usuario.
+        boolean flag = true;
+
+        while (flag) {
+            // Pedimos el string por pantalla.
+            System.out.println(mensaje);
+
+            // 3. Usamos .trim() para eliminar espacios en blanco al inicio y al final.
+            cadena = sc.nextLine().trim();
+
+            // Comprobamos que la cadena no esté vacía después de quitarle los espacios.
+            if (!cadena.isEmpty()) {
+                // Si llegamos hasta aquí, el dato es correcto.
+                flag = false;
+            } else {
+                // 2. Mensaje de error específico.
+                System.out.println("Error: No puede introducir una cadena vacía.");
+            }
+        }
+
+        return cadena;
     }
 
     /**
