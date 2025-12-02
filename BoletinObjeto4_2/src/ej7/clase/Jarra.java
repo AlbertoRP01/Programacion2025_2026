@@ -49,7 +49,7 @@ public class Jarra {
     }
 
     public void volcarJarra(Jarra otraJarra) {
-        //calculo de vaciar de la Jarra A para llenar la JarraB
+        //calculo de vaciar de la Jarra A para llenar la JarraB o JarraB llena a la JarraA
         int espacioLibre = otraJarra.capacidad - otraJarra.capacidadActual;
         int cantidadVerter = Math.min(this.capacidadActual, espacioLibre);
 
