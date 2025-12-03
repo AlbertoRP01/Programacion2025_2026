@@ -6,8 +6,4 @@ public class Juego {
     static void main(String[] args) {
 
     }
-    public void mostrarBaraja() {
-
-    }
-
 }
