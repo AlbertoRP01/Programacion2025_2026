@@ -51,7 +51,7 @@ public class Baraja {
             throw new BarajaException("No quedan cartas para repartir a mas jugadores");
         }
         indiceSiguienteCarta += reparto;
-        System.out.println("Las cartas restantes:" + Arrays.toString(cartasRestantes()));
+        System.out.println("Las cartas restantes:" + cartasDisponibles);
     }
 
     @Override
@@ -61,5 +61,4 @@ public class Baraja {
         sb.append("\n\t Cartas").append(Arrays.toString(cartas));
         return sb.toString();
     }
-
 }
