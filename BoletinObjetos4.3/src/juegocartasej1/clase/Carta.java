@@ -17,11 +17,13 @@ public class Carta {
         return numero;
     }
 
+
+    public
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n\t palo: ").append(getPalo());
-        sb.append("\n\t numero :").append(getNumero());
+        sb.append("\n\t palo: ").append(getPalo()).append(".");
+        sb.append("\n\t numero :").append(getNumero()).append(".");
         return sb.toString();
     }
 }

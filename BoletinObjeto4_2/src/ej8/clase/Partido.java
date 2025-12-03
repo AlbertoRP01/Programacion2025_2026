@@ -14,6 +14,7 @@ public class Partido {
     private int golesEquipoVisitante;
 
     private boolean jugado;
+
     public Partido(String estadio, Equipo equipoLocal, Equipo equipoVisitante) throws PartidoException {
         setJornada(jornada);
         this.estadio = estadio;
@@ -56,4 +57,7 @@ public class Partido {
         this.jornada = jornada;
     }
 
+    public String resultadoQuiniela(){
+
+    }
 }

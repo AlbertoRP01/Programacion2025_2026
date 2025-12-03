@@ -46,4 +46,14 @@ public class Equipo {
     public int partidosGanados(){
        return this.partidosGanados ++;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\tpartidos: ");
+        sb.append("\n\tnombre: ").append(getNombre()).append(".");
+        sb.append("\n\tnumero de goles :").append(getNumGoles()).append(".");
+        sb.append("\n\tpartidos ganados:").append(getPartidosGanados()).append(".");
+        return sb.toString();
+    }
 }

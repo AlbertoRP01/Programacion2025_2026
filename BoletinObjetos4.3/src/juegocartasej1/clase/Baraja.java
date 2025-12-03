@@ -15,10 +15,25 @@ public class Baraja {
         return cartas;
     }
 
+    public Carta[] cartasrestantes() {
+        return this.getCartas();
+    }
+
+    public void barajar() {
+        for (int i = cartas.length - 1; i < 0; i--) {
+            int j = (int) Math.random() * (i + 1);
+            Carta temp = cartas[i];
+            cartas[i] = cartas[j];
+            cartas[j] = temp;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Baraja{" +
-                "cartas=" + Arrays.toString(cartas) +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\tBaraja:");
+        sb.append("\n\t Cartas").append(Arrays.toString(cartas));
+        return sb.toString();
     }
+
 }
