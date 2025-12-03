@@ -57,7 +57,5 @@ public class Partido {
         this.jornada = jornada;
     }
 
-    public String resultadoQuiniela(){
 
-    }
 }
