@@ -57,5 +57,5 @@ public class Partido {
         this.jornada = jornada;
     }
 
-
+    
 }
