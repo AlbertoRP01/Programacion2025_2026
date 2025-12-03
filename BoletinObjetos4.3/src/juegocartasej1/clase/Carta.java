@@ -18,7 +18,6 @@ public class Carta {
     }
 
 
-    public
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
