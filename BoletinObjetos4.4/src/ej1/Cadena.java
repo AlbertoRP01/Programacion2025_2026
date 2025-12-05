@@ -1,4 +1,4 @@
-package clases;
+package ej1;
 
 public class Cadena {
     private String cadena;
@@ -17,16 +17,18 @@ public class Cadena {
         return caracter;
     }
 
-    public void caracter() {
+    public int caracter() {
         String cadenaMinuscula = cadena.toLowerCase();
         char caracterMinuscula = Character.toLowerCase(caracter);
 
         int contador = 0; // Inicializamos el contador
 
-       /* for () {
-
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == caracter) {
+                contador++;
+            }
         }
+        return contador;
 
-        */
     }
 }
