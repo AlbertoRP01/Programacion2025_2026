@@ -26,4 +26,12 @@ public class Revision {
         return estado;
     }
 
+    @Override
+    public String toString() {
+        return "Revision{" +
+                "fecha=" + fecha +
+                ", estado=" + estado +
+                ", periodoValidez=" + periodoValidez +
+                '}';
+    }
 }

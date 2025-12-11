@@ -3,8 +3,8 @@ package clases;
 import excepciones.AvionException;
 
 public class Deposito {
-    private  double capacidadMax;
-    private  double capacidadActual;
+    private double capacidadMax;
+    private double capacidadActual;
 
     public Deposito(double capacidadActual, double capacidadMax) {
         this.capacidadActual = capacidadActual;
@@ -20,24 +20,29 @@ public class Deposito {
     }
 
     public void setCapacidadActual(double capacidadActual) throws AvionException {
-        if (capacidadActual < 0){
+        if (capacidadActual < 0) {
             throw new AvionException("La capacidad actual No puede contener capacidad negativa");
         }
         this.capacidadActual = capacidadActual;
     }
 
     public void setCapacidadMax(double capacidadMax) throws AvionException {
-        if (capacidadMax < 0){
+        if (capacidadMax < 0) {
             throw new AvionException("La capacidad maxima no puede ser negativa");
         }
         this.capacidadMax = capacidadMax;
     }
 
+    public void rellenarDeposito() throws AvionException {
+        if (capacidadActual == capacidadMax) {
+            throw new AvionException("Está lleno el deposito");
+        } else {
+            capacidadActual += capacidadMax;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Deposito{" +
-                "capacidadMax=" + capacidadMax +
-                ", capacidadActual=" + capacidadActual +
-                '}';
+        return "Deposito{" + "capacidadMax=" + capacidadMax + ", capacidadActual=" + capacidadActual + '}';
     }
 }
