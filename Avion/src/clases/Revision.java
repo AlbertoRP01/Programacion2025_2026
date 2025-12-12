@@ -26,12 +26,21 @@ public class Revision {
         return estado;
     }
 
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public void setPeriodoValidez(Period periodoValidez) {
+        this.periodoValidez = periodoValidez;
+    }
+
     @Override
     public String toString() {
-        return "Revision{" +
-                "fecha=" + fecha +
-                ", estado=" + estado +
-                ", periodoValidez=" + periodoValidez +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\tRevision:");
+        sb.append("\n\tFecha:").append(getFecha()).append(".");
+        sb.append("\n\tEstado:").append(isEstado()).append(".");
+        sb.append("\n\tPeriodo de Validez:").append(".");
+        return sb.toString();
     }
 }
