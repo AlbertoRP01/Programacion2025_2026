@@ -5,11 +5,12 @@ import ej2.enums.TGama;
 
 public abstract class Vehiculo {
     private String matricula;
-    private TGama gamas;
+    private TGama gama;
     private TCombustible combustibles;
-    public Vehiculo(String matricula, TGama gamas, TCombustible combustible) {
+
+    public Vehiculo(String matricula, TGama gama, TCombustible combustible) {
         this.matricula = matricula;
-        this.gamas = gamas;
+        this.gama = gama;
         this.combustibles = combustible;
     }
 
@@ -17,15 +18,27 @@ public abstract class Vehiculo {
         return matricula;
     }
 
-    public TGama getGamas() {
-        return gamas;
+    public TGama getGama() {
+        return gama;
     }
 
     public TCombustible getCombustibles() {
         return combustibles;
     }
 
-    public void calcularPrecioAlquiler(){
 
+    public double calcularPrecioAlquiler(int numDias) {
+        return numDias * gama.getPrecioBase();
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "matricula='" + matricula + '\'' +
+                ", gama=" + gama +
+                ", combustibles=" + combustibles +
+                '}';
     }
 }
