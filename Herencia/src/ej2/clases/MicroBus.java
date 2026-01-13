@@ -20,7 +20,7 @@ public class MicroBus extends Vehiculo{
 
     @Override
     public String toString() {
-        return "MicroBus{" +
+        return super.toString() +"MicroBus{" +
                 "PRECIO_POR_PLAZA=" + PRECIO_POR_PLAZA +
                 ", numPlazas=" + numPlazas +
                 '}';
