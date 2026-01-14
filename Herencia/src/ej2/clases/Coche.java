@@ -18,6 +18,6 @@ public class Coche extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Coche{}";
+        return super.toString() +"Coche{}";
     }
 }

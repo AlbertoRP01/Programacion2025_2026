@@ -20,7 +20,7 @@ public class Furgoneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Furgoneta{" +
+        return super.toString() +"Furgoneta{" +
                 "PMA=" + PMA +
                 '}';
     }
