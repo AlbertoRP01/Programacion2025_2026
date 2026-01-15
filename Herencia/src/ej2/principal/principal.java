@@ -30,6 +30,7 @@ public class principal {
                     while (flag) {
                         try {
                             gama = TGama.valueOf(MiEntradaSalida.solicitarCadena("Gama: baja, media, alta"));
+                            flag = false;
                         } catch (IllegalArgumentException e) {
                             System.out.println("No  hay otra opción.Solo gama baja, gama media y gama alta ");
                         }
@@ -37,9 +38,9 @@ public class principal {
                     TCombustible combustible = null;
                     while (flag) {
                         try {
-                            combustible = TCombustible.valueOf(MiEntradaSalida.solicitarCadena("Combustible: gasolina, diesel"));
+                            combustible = TCombustible.valueOf(MiEntradaSalida.solicitarCadena("Combustible: gasolina, diesel").toUpperCase());
                         } catch (IllegalArgumentException e) {
-                            System.out.println("No hay otra opción.Solo gasolina, diesel");
+                            System.out.println("No hay otra opción.Solo 1.gasolina, 2.diesel");
                         }
                     }
 

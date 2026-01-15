@@ -1,4 +1,4 @@
-package ej4.enums;
+package ej3.enums;
 
 public enum TRaza {
    HUMANO("Humano"), ELFO("Elfo"), ENANO("Enano"), ORCO("Orco");
