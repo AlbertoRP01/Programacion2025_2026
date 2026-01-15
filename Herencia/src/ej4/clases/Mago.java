@@ -1,10 +1,9 @@
-package ej3.clases;
+package ej4.clases;
 
-import ej3.enums.TRaza;
-import ej3.excepciones.PersonajeException;
+import ej4.enums.TRaza;
+import ej4.excepciones.PersonajeException;
 
 import java.util.Arrays;
-import java.util.IllegalFormatCodePointException;
 
 public class Mago extends Personaje {
     private final int I_MIN = 17;

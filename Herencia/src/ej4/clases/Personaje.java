@@ -1,7 +1,7 @@
-package ej3.clases;
+package ej4.clases;
 
-import ej3.enums.TRaza;
-import ej3.excepciones.PersonajeException;
+import ej4.enums.TRaza;
+import ej4.excepciones.PersonajeException;
 
 public abstract class Personaje implements Comparable<Personaje> {
     private String nombre;

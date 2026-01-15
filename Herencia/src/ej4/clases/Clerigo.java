@@ -1,9 +1,7 @@
-package ej3.clases;
+package ej4.clases;
 
-import ej3.enums.TRaza;
-import ej3.excepciones.PersonajeException;
-
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
+import ej4.enums.TRaza;
+import ej4.excepciones.PersonajeException;
 
 public class Clerigo extends Personaje {
     private final int I_MIN = 12;
