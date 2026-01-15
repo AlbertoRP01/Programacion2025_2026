@@ -11,13 +11,13 @@ public abstract class Personaje implements Comparable<Personaje> {
     private int vidaMax;
     private int vidaActual;
 
-    public Personaje(String nombre, TRaza razas, int fuerza, int inteligencia, int vidaMax, int vidaActual) throws PersonajeException {
+    public Personaje(String nombre, TRaza razas, int fuerza, int inteligencia, int vidaMax) throws PersonajeException {
         this.nombre = nombre;
         this.razas = razas;
         setFuerza(fuerza);
         setInteligencia(inteligencia);
         setVidaMax(vidaMax);
-        this.vidaActual = setVidaMax(vidaMax);
+        this.vidaActual = vidaMax;
     }
 
     public TRaza getRazas() {

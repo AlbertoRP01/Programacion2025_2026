@@ -12,8 +12,8 @@ public class Clerigo extends Personaje {
     private final int F_MAX = 20;
     private String dios;
 
-    public Clerigo(String nombre, TRaza razas, int fuerza, int inteligencia, int vidaMax, int vidaActual, String dios) throws PersonajeException {
-        super(nombre, razas, fuerza, inteligencia, vidaMax, vidaActual);
+    public Clerigo(String nombre, TRaza razas, int fuerza, int inteligencia, int vidaMax, String dios) throws PersonajeException {
+        super(nombre, razas, fuerza, inteligencia, vidaMax);
         this.dios = dios;
     }
 
