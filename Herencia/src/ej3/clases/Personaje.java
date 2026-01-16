@@ -4,6 +4,7 @@ import ej3.enums.TRaza;
 import ej3.excepciones.PersonajeException;
 
 public abstract class Personaje implements Comparable<Personaje> {
+    //Atributos
     private String nombre;
     private TRaza razas;
     private int fuerza;
@@ -19,19 +20,20 @@ public abstract class Personaje implements Comparable<Personaje> {
         setVidaMax(vidaMax);
         this.vidaActual = vidaMax;
     }
-
+    public String getNombre() {
+        return nombre;
+    }
     public TRaza getRazas() {
         return razas;
     }
-
-    public String getNombre() {
-        return nombre;
+    public int getVidaMax() {
+        return vidaMax;
     }
 
     public int getVidaActual() {
         return vidaActual;
     }
-
+    // Estos metodos abstractos para que guarde informacion tanto de clerigo como de mago sobre algunas de sus caracteristicas
     public abstract int getFuerzaMin();
 
     public abstract int getFuerzaMax();
@@ -40,9 +42,6 @@ public abstract class Personaje implements Comparable<Personaje> {
 
     public abstract int getInteligenciaMax();
 
-    public int getVidaMax() {
-        return vidaMax;
-    }
 
     public void setVidaActual(int vidaActual) {
         this.vidaActual = vidaActual;
@@ -73,6 +72,7 @@ public abstract class Personaje implements Comparable<Personaje> {
         }
         return vidaMax;
     }
+
 
     public int compareTo(Personaje o) {
         int resultado = this.getNombre().compareTo(o.getNombre());
