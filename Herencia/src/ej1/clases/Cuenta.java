@@ -1,6 +1,6 @@
 package ej1.clases;
 
-import ej1.exceptiones.CuentaException;
+import ej1.excepciones.CuentaException;
 
 
 public class Cuenta {

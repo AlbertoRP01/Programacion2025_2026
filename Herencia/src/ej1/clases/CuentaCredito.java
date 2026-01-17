@@ -1,8 +1,8 @@
 package ej1.clases;
 
-import ej1.exceptiones.CuentaException;
+import ej1.excepciones.CuentaException;
 
-public class CuentaCredito extends Cuenta{
+public class CuentaCredito extends Cuenta {
     private static final double SALDO_INICIAL = 0;
     private static final double CREDITO_POR_DEFECTO = 100;
     private static final double CREDITO_MAX = 300;

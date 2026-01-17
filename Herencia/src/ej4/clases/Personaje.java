@@ -75,15 +75,24 @@ public abstract class Personaje implements Comparable<Personaje> {
     }
 
     public int compareTo(Personaje o) {
-        int resultado = this.getNombre().compareTo(o.getNombre());
+        int resultado = Integer.compare(o.getVidaActual(), this.getVidaActual());
+
+        // 2. Si tienen la misma vida (empate), usamos el nombre como criterio secundario
         if (resultado == 0) {
-            resultado = this.getRazas().compareTo(o.getRazas());
+            resultado = this.getNombre().compareTo(o.getNombre());
         }
-        if (resultado == 0) {
-            resultado = Integer.compare(this.getVidaActual(), o.getVidaActual());
-        }
+
         return resultado;
     }
+
+    @Override
+    public boolean equals(Object o) {
+       if (this == o) return true;
+       if (o == null || getClass() != o.getClass()) return false;
+       Personaje personaje = (Personaje) o;
+       return java.util.Objects.equals(nombre, personaje.nombre);
+    }
+
 
     @Override
     public String toString() {

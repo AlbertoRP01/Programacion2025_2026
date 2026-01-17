@@ -52,13 +52,16 @@ public class Clerigo extends Personaje {
             System.out.println("¡Error! El clérigo no puede usar sus plegarias en sí mismo.");
             return;
         }
-        if (aliado.getVidaActual() + 10 <= aliado.getVidaMax()) {
-            int curarAliado = aliado.getVidaActual() + 10;
-            System.out.println(aliado.getNombre() + "se ha curado");
-        } else {
-            System.out.println(aliado.getNombre() + "Su salud está al completo");
+        if (aliado.getVidaActual() >= aliado.getVidaMax()) {
+            System.out.println("ya tiene la salud al completo");
+            return;
         }
-
+        int curarAliado = aliado.getVidaActual() + 10;
+        if (curarAliado > aliado.getVidaMax()) {
+            curarAliado = aliado.getVidaMax();
+        }
+        aliado.setVidaActual(curarAliado);
+        System.out.println(aliado.getNombre() + "Se ha curado la vida Actual" + aliado.getVidaActual());
     }
 
     @Override

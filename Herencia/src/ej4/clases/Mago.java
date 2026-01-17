@@ -77,7 +77,7 @@ public class Mago extends Personaje {
 
     public String lanzarHechizo(Personaje enemigo, String hechizo) {
         for (int i = 0; i < hechizos.length; i++) {
-            if (hechizos[i].equals(hechizo)) {
+            if (hechizos[i] != null &&hechizos[i].equalsIgnoreCase(hechizo)) {
                 int vidaEnemiga = enemigo.getVidaActual() - 10;
                 enemigo.setVidaActual(vidaEnemiga);
                 hechizos[i] = null;
