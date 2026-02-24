@@ -28,5 +28,5 @@ public class Profesor extends Persona {
         }
         return sb.toString();
     }
-      
+
 }
