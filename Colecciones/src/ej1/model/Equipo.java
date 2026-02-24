@@ -4,7 +4,7 @@ import ej1.exceptions.EquipoException;
 
 import java.util.*;
 
-public class Equipo {
+public class Equipo<T>{
     private String nomnbre;
     private Set<Alumno> alumnos;
 
@@ -105,6 +105,7 @@ public class Equipo {
         union.retainAll(a.alumnos);
         return new Equipo("Union FC", union);
     }
+
 }
 
 

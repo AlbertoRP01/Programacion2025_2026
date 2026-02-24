@@ -19,13 +19,7 @@ public class Alumno {
         return dni;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("Alumno:");
-        sb.append(getNombre()).append('\n');
-        sb.append(getDni()).append('\'');
-         return sb.toString();
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -40,5 +34,12 @@ public class Alumno {
         int result = Objects.hashCode(nombre);
         result = 31 * result + Objects.hashCode(dni);
         return result;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Alumno:");
+        sb.append(getNombre()).append('\n');
+        sb.append(getDni()).append('\'');
+        return sb.toString();
     }
 }

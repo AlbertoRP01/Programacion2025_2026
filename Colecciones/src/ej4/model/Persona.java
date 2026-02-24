@@ -65,9 +65,9 @@ public abstract class Persona {
         int contador = 0;
         for (Mensaje m : buzon) {
             if (m.getTexto().contains(frase)) {
-                    contador ++;
-                    sb.append("Mensaje: ").append(contador).append(":\n")
-                            .append(m.toString()).append("\n");
+                contador ++;
+                sb.append("Mensaje: ").append(contador).append(":\n")
+                        .append(m.toString()).append("\n");
             }
         }
         if (contador == 0) {
