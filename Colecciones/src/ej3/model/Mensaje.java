@@ -36,4 +36,5 @@ public class Mensaje {
         sb.append("Texto:\n" + " ").append(texto);
         return sb.toString();
     }
+
 }
