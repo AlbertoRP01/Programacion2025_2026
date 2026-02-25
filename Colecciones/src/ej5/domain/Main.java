@@ -1,6 +1,7 @@
 import ej5.exceptions.DiccionarioException;
 import ej5.model.Diccionario;
-import util.MiEntradaSalida;
+import mientradasalida.MiEntradaSalida;
+
 
 public static void main(String[] args) {
     Diccionario miDiccionario = new Diccionario();
@@ -8,7 +9,7 @@ public static void main(String[] args) {
 
     do {
         mostrarMenu();
-        opcion = MiEntradaSalida.solicitarEntero("Selecciona una opción:");
+        opcion = MiEntradaSalida.leerEntero("Selecciona una opción:");
 
         try {
             switch (opcion) {
