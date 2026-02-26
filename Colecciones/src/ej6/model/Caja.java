@@ -13,7 +13,7 @@ public class Caja implements Comparable<Caja> {
     /**
      * Atributo del contador de clientes
      */
-    private int contador = 1;
+    private static int contador = 1;
     /**
      * La cola de clientes
      */
@@ -68,6 +68,9 @@ public class Caja implements Comparable<Caja> {
      * @param cliente
      */
     public void annadirCliente(int cliente) {
+        if (!abierta){
+            throw new CajaException("La caja está cerrada");
+        }
         clientes.add(cliente);
     }
 

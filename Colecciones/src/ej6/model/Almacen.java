@@ -12,7 +12,7 @@ import java.util.List;
 public class Almacen {
     private static final int NUM_MAX_CAJAS = 20;
     private List<Caja> cajas;
-
+    private int contadorClientes = 1;
     public Almacen() {
         this.cajas = new ArrayList<>(NUM_MAX_CAJAS);
         for (int i = 0; i < NUM_MAX_CAJAS; i++) {
@@ -21,8 +21,7 @@ public class Almacen {
     }
 
     public void nuevoCliente() {
-        int cliente = 1;
-        cliente++;
+        int  cliente = contadorClientes ++;
         Caja c = cajas.stream().filter(Caja::isAbierta).min(Caja::compareTo).orElseThrow(() -> new SupermercadoException("No puede añadir al cliente"));
         c.annadirCliente(cliente);
         System.out.println("El cliente numero" + cliente + "se ha ido a la caja" + c.getNUM_DE_CAJA());
