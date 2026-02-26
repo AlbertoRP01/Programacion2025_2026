@@ -80,12 +80,10 @@ public class MiEntradaSalida {
      * @param max     rango maximo
      * @return devuelve el numero
      */
-    public static int leeEnteroRango(String mensaje, int min, int max) {
+    public static int leeEnteroRango(String mensaje, int min, int max) throws MiEntradaSalidaException {
         if (min > max) {
             //mostrar error
-            System.out.println("El minimo es mayor que el maximo");
-            //TODO: cambiar esto al ver las excepciones
-            return -1;
+            throw new MiEntradaSalidaException("El minimo es mayor que el maximo");
         }
         int num = leerEntero(mensaje);
         while (num < min || num > max) {
