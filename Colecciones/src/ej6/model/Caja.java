@@ -1,7 +1,6 @@
 package ej6.model;
 
-import ej6.excepciones.CajaException;
-import ej6.excepciones.SupermercadoException;
+import ej6.exceptions.CajaException;
 
 import java.util.*;
 

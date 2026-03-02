@@ -1,4 +1,4 @@
-package ej6.excepciones;
+package ej6.exceptions;
 
 public class SupermercadoException extends RuntimeException {
     public SupermercadoException(String message) {

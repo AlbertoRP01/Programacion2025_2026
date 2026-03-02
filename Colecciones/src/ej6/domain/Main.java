@@ -1,6 +1,6 @@
 package ej6.domain;
 
-import ej6.excepciones.SupermercadoException;
+import ej6.exceptions.SupermercadoException;
 import ej6.model.Almacen;
 import mientradasalida.MiEntradaSalida;
 import mientradasalida.MiEntradaSalidaException;

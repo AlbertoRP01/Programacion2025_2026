@@ -1,12 +1,10 @@
 package ej6.model;
 
-import ej6.excepciones.SupermercadoException;
+import ej6.exceptions.SupermercadoException;
 import mientradasalida.MiEntradaSalida;
 import mientradasalida.MiEntradaSalidaException;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Almacen {
