@@ -8,11 +8,32 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class Receta {
+    /**
+     * nombre de la receta
+     */
     private String nombre;
+
+    /**
+     * La duracion del tiempo de preparacion de la receta
+     */
     private Duration tiempoPreparacion;
+
+    /**
+     * El conjunto de ingredientes
+     */
     private Set<Ingrediente> ingredientes;
+
+    /**
+     * La lista de pasos
+     */
     private LinkedList<String> pasos;
 
+    /**
+     * Constructor de la receta Se utiliza duration para saber los minutos de preparacion de la receta
+     * porque utiliza el entero para luego procesarlo a minutos
+     * @param nombre
+     * @param minutos
+     */
     public Receta(String nombre, int minutos) {
         this.nombre = nombre;
         this.tiempoPreparacion = Duration.ofMinutes(minutos);
@@ -32,6 +53,11 @@ public class Receta {
         return pasos;
     }
 
+    /**
+     * TODO:Busca el ingrediente existente
+     * @param ingrediente la variable que se aloja en el parámetro
+     * @return en el caso de que se encuentre devuelve verdadero y en el casod e que no devuelve false
+     */
     public boolean necesitaIngrediente(Ingrediente ingrediente) {
         for (Ingrediente i : ingredientes) {
             if (i.getNombre().equalsIgnoreCase(ingrediente.getNombre())) {
@@ -41,6 +67,11 @@ public class Receta {
         return false;
     }
 
+    /**
+     * Añade el ingrediente a la receta necesitando de su nombre y sumando su cantidad en el caso de que ese ingrediente
+     * exista, en el caso de que no puedes  se añade su ingrediente
+     * @param ingrediente la variable que se aloja en el parámetro
+     */
     public void annadirIngrediente(Ingrediente ingrediente) {
         boolean enconntrado = false;
         for (Ingrediente i : ingredientes) {
@@ -55,6 +86,12 @@ public class Receta {
         }
     }
 
+    /**
+     * Borra el ingrediente de la receta y también el paso con la condicion de que si contiene ese ingrediente a través
+     * de su nombre
+     * @param ingrediente la variable que se aloja en el parámetro
+     * @throws RecetaException  salta la excepcion cuando no contenga ese ingrediente
+     */
     public void BorrarIngrediente(Ingrediente ingrediente) throws RecetaException {
         if (!ingredientes.contains(ingrediente)) {
             throw new RecetaException("El ingrediente no existe en la receta");
@@ -63,6 +100,13 @@ public class Receta {
 
         pasos.removeIf(paso -> paso.toLowerCase().contains(ingrediente.getNombre().toLowerCase()));
     }
+
+    /**
+     * TODO: Añades un paso nuevo de la misma receta que estás editando
+     * @param pasoNuevo variable que se aloja en el parámetro
+     * @param pasoExistente La variable que está en el parámétro
+     * @throws RecetaException Muestra la excepcion si dicho ingrediente existente no existe
+     */
     public void annadirPasoDetrasDe(String pasoNuevo, String pasoExistente) throws RecetaException {
         int indice = pasos.indexOf(pasoExistente);
         if (indice == -1) {
