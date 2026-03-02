@@ -47,10 +47,11 @@ public class Caja implements Comparable<Caja> {
     }
 
     public void cajaAbierta() {
-        if (abierta) {
-            throw new CajaException("La caja está cerrada");
-        }
         abierta = true;
+        if (abierta) {
+            throw new CajaException("La caja está abierta");
+        }
+
     }
 
     /**
@@ -58,7 +59,7 @@ public class Caja implements Comparable<Caja> {
      */
     public void cajaCerrada() {
         if (!abierta || !clientes.isEmpty()) {
-            throw new CajaException("La caja está abierta");
+            throw new CajaException("La caja está cerrada");
         }
         abierta = false;
     }
@@ -68,8 +69,8 @@ public class Caja implements Comparable<Caja> {
      * @param cliente
      */
     public void annadirCliente(int cliente) {
-        if (!abierta){
-            throw new CajaException("La caja está cerrada");
+        if (!abierta) {
+            throw new CajaException("No se puede añadir al cliente porque la  caja está cerrada");
         }
         clientes.add(cliente);
     }
@@ -88,7 +89,8 @@ public class Caja implements Comparable<Caja> {
      */
     public void  atenderCliente(){
         if (!abierta|| clientes.isEmpty()){
-            throw new CajaException("No se puede atender en esta caja");
+            throw new CajaException("No se puede atender en esta caja" +  clientes.size());
+
         }else {
             clientes.poll();
 

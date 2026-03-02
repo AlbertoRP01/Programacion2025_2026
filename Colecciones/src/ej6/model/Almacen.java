@@ -24,7 +24,8 @@ public class Almacen {
         int  cliente = contadorClientes ++;
         Caja c = cajas.stream().filter(Caja::isAbierta).min(Caja::compareTo).orElseThrow(() -> new SupermercadoException("No puede añadir al cliente"));
         c.annadirCliente(cliente);
-        System.out.println("El cliente numero" + cliente + "se ha ido a la caja" + c.getNUM_DE_CAJA());
+        System.out.println("El cliente numero " + cliente + " se ha ido a la caja" + c.getNUM_DE_CAJA());
+        System.out.println(cajas.stream().map(Caja::isAbierta).toList());
     }
 
     public void atenderCliente() throws MiEntradaSalidaException {
@@ -34,11 +35,16 @@ public class Almacen {
 
     public void abrirCaja() throws MiEntradaSalidaException {
         int numeroCaja = MiEntradaSalida.leeEnteroRango("Elige una caja que quieras abrir", 1, 20);
-        cajas.get(numeroCaja - 1).cajaAbierta();
+        Caja c = cajas.get(numeroCaja  -1 );
+        System.out.println("Abriendo caja nº real: " + c.getNUM_DE_CAJA());
+        c.cajaAbierta();
     }
 
     public void cerrarCaja() throws MiEntradaSalidaException {
+
         int numCaja = MiEntradaSalida.leeEnteroRango("Elige la caja que quieras cerrar", 1, 20);
-        cajas.get(numCaja - 1).cajaCerrada();
+       Caja c = cajas.get(numCaja - 1);
+        System.out.println("Cerrando caja nº real: " + c.getNUM_DE_CAJA());
+        c.cajaCerrada();
     }
 }
