@@ -1,6 +1,7 @@
 package ej7.model;
 
 import ej7.exceptions.RecetaException;
+import mientradasalida.MiEntradaSalida;
 
 import java.sql.Time;
 import java.time.Duration;
@@ -39,6 +40,10 @@ public class Receta {
         this.tiempoPreparacion = Duration.ofMinutes(minutos);
         this.ingredientes = new HashSet<>();
         this.pasos = new LinkedList<>();
+    }
+
+    public Duration getTiempoPreparacion() {
+        return tiempoPreparacion;
     }
 
     public String getNombre() {
@@ -92,7 +97,8 @@ public class Receta {
      * @param ingrediente la variable que se aloja en el parámetro
      * @throws RecetaException  salta la excepcion cuando no contenga ese ingrediente
      */
-    public void BorrarIngrediente(Ingrediente ingrediente) throws RecetaException {
+    public void borrarIngrediente(Ingrediente ingrediente) throws RecetaException {
+
         if (!ingredientes.contains(ingrediente)) {
             throw new RecetaException("El ingrediente no existe en la receta");
         }

@@ -35,11 +35,13 @@ public class Ingrediente {
         this.cantidad = cantidad;
     }
 
+
     /**
      * Te muestra la información completa del ingrediente
      *
      * @return devuelve toda la información del ingrediente
      */
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Ingrediente{");
