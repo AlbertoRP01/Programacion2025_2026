@@ -81,7 +81,7 @@ public class Receta {
         boolean enconntrado = false;
         for (Ingrediente i : ingredientes) {
             if (i.getNombre().equalsIgnoreCase(ingrediente.getNombre())) {
-                i.setCantidad(ingrediente.getCantidad() + ingrediente.getCantidad());
+                i.setCantidad(i.getCantidad() + ingrediente.getCantidad());
                 enconntrado = true;
                 break;
             }
@@ -119,5 +119,18 @@ public class Receta {
           throw new RecetaException("El paso de referencia no existe");
         }
         pasos.add(indice + 1, pasoNuevo);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Receta receta = (Receta) o;
+        return Objects.equals(nombre, receta.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nombre);
     }
 }

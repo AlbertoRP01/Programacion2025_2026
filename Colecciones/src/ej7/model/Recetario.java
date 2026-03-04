@@ -11,7 +11,6 @@ public class Recetario {
      * la clave es el nombre de la receta y el valor es la receta
      */
     private Map<String, Receta> recetas;
-
     /**
      * El constructor de recetario inicializando el mapa de recetas
      */
@@ -19,6 +18,13 @@ public class Recetario {
         this.recetas = new HashMap<>();
     }
 
+    public Map<String, Receta> getRecetas() {
+        return recetas;
+    }
+
+    public Receta getReceta(String nombre){
+        return recetas.get(nombre);
+    }
     /**
      * Añade una receta al recetario.
      * Verifica si ya existe una receta con el mismo nombre y lanza una excepción en ese caso.
