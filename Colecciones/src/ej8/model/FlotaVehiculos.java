@@ -4,6 +4,7 @@ import ej8.exceptions.VehiculoException;
 import ej8.model.Vehiculo;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class FlotaVehiculos {
 
@@ -22,6 +23,7 @@ public class FlotaVehiculos {
     /**
      * Introduce el vehiculo al mapa de vehculos
      * se comprueba que el vehiculo no sea nulo
+     *
      * @param vehiculo la variable que se instancia en el parámetro
      * @throws VehiculoException
      */
