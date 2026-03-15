@@ -1,5 +1,7 @@
 package ej7.model;
 
+import java.util.Objects;
+
 public class Ingrediente {
     /**
      * Nombre del ingrediente
@@ -48,5 +50,18 @@ public class Ingrediente {
         sb.append("nombre= ").append(getNombre()).append("\n");
         sb.append("cantidad= ").append(getCantidad()).append(".");
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ingrediente that = (Ingrediente) o;
+        return Objects.equals(nombre, that.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nombre);
     }
 }
