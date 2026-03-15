@@ -36,6 +36,8 @@ public class Main {
                     }
                     recetario.annadirReceta(receta);
                     System.out.println("Receta Añadida correctamente");
+
+                    
                 }
             }
             while (!salir){
