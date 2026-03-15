@@ -42,6 +42,10 @@ public class Personaje {
         return ataques;
     }
 
+    public void setNivelVidaActual(int nivelVidaActual) {
+        this.nivelVidaActual = nivelVidaActual;
+    }
+
     public void addAtaque(Ataque ataque) throws DBException {
         if (!ataques.add(ataque)) {
             throw new DBException("El ataque ya existe");

@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Juego {
     private Set<Personaje> personajes = new HashSet<>();
@@ -152,27 +154,48 @@ public class Juego {
     }
 
     public void todosLosAtaquesOrdenadosNombre() {
-
+            List<String> nombreAtaques = personajes.stream().flatMap(p ->  p.getAtaques().stream())
+                    .map(a -> a.getNombre())
+                    .sorted().collect(Collectors.toList());
+            nombreAtaques.forEach(d -> System.out.println(d));
     }
 
     public void todosLosAtaquesOrdenadosDamage() {
-
+        personajes.stream()
+                .flatMap(p -> p.getAtaques().stream())
+                .sorted(Comparator.comparingInt(Ataque::getDanioProvoca).reversed())
+                .forEach(a -> System.out.println(a.getNombre() + "-> " + a.getDanioProvoca()));
     }
 
     public Ataque ataqueMasDañino(Personaje p1, Personaje p2) throws DBException {
-
+        Stream<Ataque> ataqueP1 = p1.getAtaques().stream();
+        Stream<Ataque> ataqueP2 = p2.getAtaques().stream();
+        Stream<Ataque> todosLosAtaques = Stream.concat(ataqueP1, ataqueP2);
+      Ataque ataqueMasdañino = todosLosAtaques
+                .max(Comparator.comparingInt(a -> a.getDanioProvoca()))
+                .orElseThrow(() -> new DBException("No hay ataques disponibles"));
+      return ataqueMasdañino;
     }
 
     public void atacar(Personaje p1, Personaje p2, String ataque) throws DBException {
-
+        Ataque ataqueSeleccionado = p1.getAtaques().stream()
+                .filter( a -> a.getNombre().equalsIgnoreCase(ataque))
+                .findFirst()
+                .orElseThrow(() -> new DBException("Ataque no encontrado"));
+        int danio = ataqueSeleccionado.getDanioProvoca();
+        p2.setNivelVidaActual(p2.getNivelVidaActual() - danio);
+        System.out.println(p1.getNombre() + "usó" + ataqueSeleccionado.getNombre() +
+                "y causó" + danio + p2.getNivelVidaActual()) ;
     }
 
     public void eliminarAtaquesInferioresANivel(int nivel) {
-
+        personajes.stream()
+                .forEach(p -> p.getAtaques().removeIf(a -> a.getNivelPerfeccion() < nivel));
     }
 
     public Map<TRaza, List<Personaje>> devuelveMapaRazas() {
-
+        return personajes.stream()
+                .collect(Collectors.groupingBy(Personaje::getRaza));
     }
 
 }
