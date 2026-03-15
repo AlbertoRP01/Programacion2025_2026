@@ -151,6 +151,8 @@ public class Juego {
                 .mapToInt(p -> p.getAtaques().size())
                 .max()
                 .orElseThrow(() -> new DBException("No hay personaje en la lista"));
+            personajes.stream().filter( p-> p.getAtaques().size() >= numMaxAtaques )
+                    .forEach(p -> System.out.println(p.getNombre() + "\t" +  "-> " +   p.getAtaques().size()));
     }
 
     public void todosLosAtaquesOrdenadosNombre() {
