@@ -10,7 +10,7 @@ public class Personaje {
     private int nivelVidaActual;
     private int nivelKiActual;
     private Set<Ataque> ataques;
-    ;
+    boolean estaVivo;
 
     public Personaje(String nombre, TRaza raza, int vidaMax, int nivelVidaActual, int kiMax, int nivelKiActual) {
         this.nombre = nombre;
@@ -20,6 +20,7 @@ public class Personaje {
         this.nivelVidaActual = Math.min(nivelVidaActual, vidaMax);
         this.nivelKiActual = Math.min(nivelKiActual, kiMax);
         this.ataques = new LinkedHashSet<>();
+        this.estaVivo = true;
     }
 
     public String getNombre() {

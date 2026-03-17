@@ -1,6 +1,8 @@
 import java.util.Objects;
 
-public class Ataque {
+public class Ataque implements Comparable<Ataque>{
+
+
     private String nombre;
     private int nivelKiNecesario;
     private int nivelPerfeccion;
@@ -20,6 +22,7 @@ public class Ataque {
     public int getNivelKiNecesario() {
         return nivelKiNecesario;
     }
+
 
     public int getNivelPerfeccion() {
         return nivelPerfeccion;
@@ -49,7 +52,10 @@ public class Ataque {
         }
         this.danioProvoca = danioProvoca;
     }
-
+    @Override
+    public int compareTo(Ataque o) {
+        return o.getDanioProvoca() - this.getDanioProvoca();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
