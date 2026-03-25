@@ -57,6 +57,7 @@ public class Ej5Io {
         File directorio = new File("./src/ej5/salidasEjercicio5", nombreDelDirectorio);
         directorio.mkdirs();
         directorio.mkdir();
+        
     }
 
     public static void crearFichero() throws IOException {
