@@ -3,6 +3,7 @@ package ej7;
 import mientradasalida.MiEntradaSalida;
 
 import javax.naming.ldap.SortResponseControl;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -150,6 +151,25 @@ public class Ej7Nio {
         Path p = Path.of(ruta);
 
         String archivoABuscar = MiEntradaSalida.solicitarCadena("Introduce el archivo");
+
+        if (Files.isDirectory(p)) {
+            try (Stream<Path> ficheros = Files.walk(p)) {
+                ficheros.filter(path -> path.getFileName().toString().startsWith(archivoABuscar))
+                        .forEach(path -> {
+                            if (Files.isDirectory(path)) {
+                                System.out.printf("%s - directorio %n", path.getFileName());
+                            } else {
+                                try {
+                                    System.out.printf("%s %.2f KB %n", path.getFileName(), Files.size(path) / 1024.0);
+                                } catch (IOException e) {
+                                    System.out.println(e.getMessage());
+                                }
+                            }
+                        });
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public static void menu() {
