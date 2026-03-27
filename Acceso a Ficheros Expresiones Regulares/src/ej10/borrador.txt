@@ -1,0 +1,4 @@
+F borrador2.txt
+F src/ej10/test/fichero.bla
+F src/ej10/test/prohibido/fichero.bla
+F H:/src/ejercicio_10/test/porhibido/fichero.bla
