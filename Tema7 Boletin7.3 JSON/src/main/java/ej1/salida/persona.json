@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Laura Gómez",
+    "dni": "12345678A",
+    "telefono": "600111222",
+    "fechanac": "1955-01-23"
+  },
+  {
+    "nombre": "Carlos Ruiz",
+    "dni": "87654321B",
+    "telefono": "611222333",
+    "fechanac": "1925-01-23"
+  },
+  {
+    "nombre": "Ana Martínez",
+    "dni": "11223344C",
+    "telefono": "622333444",
+    "fechanac": "1945-01-23"
+  },
+  {
+    "nombre": "Pedro Sánchez",
+    "dni": "44332211D",
+    "telefono": "633444555",
+    "fechanac": "1975-01-23"
+  },
+  {
+    "nombre": "Sofía López",
+    "dni": "55667788E",
+    "telefono": "644555666",
+    "fechanac": "1995-01-23"
+  }
+]
