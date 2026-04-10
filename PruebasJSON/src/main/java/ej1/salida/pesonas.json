@@ -1,0 +1,27 @@
+[
+  {
+    "nombre": "Laura Gómez",
+    "dni": "12345678A",
+    "telefono": "600111222"
+  },
+  {
+    "nombre": "Carlos Ruiz",
+    "dni": "87654321B",
+    "telefono": "611222333"
+  },
+  {
+    "nombre": "Ana Martínez",
+    "dni": "11223344C",
+    "telefono": "622333444"
+  },
+  {
+    "nombre": "Pedro Sánchez",
+    "dni": "44332211D",
+    "telefono": "633444555"
+  },
+  {
+    "nombre": "Sofía López",
+    "dni": "55667788E",
+    "telefono": "644555666"
+  }
+]

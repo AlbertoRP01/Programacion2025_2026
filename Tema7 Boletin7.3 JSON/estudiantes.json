@@ -1,0 +1,22 @@
+[
+  {
+    "nombre": "paco",
+    "curso": "2ºDAM",
+    "notaMedia": 9.5
+  },
+  {
+    "nombre": "Francisco",
+    "curso": "1ºDAM",
+    "notaMedia": 6.5
+  },
+  {
+    "nombre": "Laura",
+    "curso": "2ºSMR",
+    "notaMedia": 10.0
+  },
+  {
+    "nombre": "Pepa",
+    "curso": "1ºSMR",
+    "notaMedia": 4.3
+  }
+]
