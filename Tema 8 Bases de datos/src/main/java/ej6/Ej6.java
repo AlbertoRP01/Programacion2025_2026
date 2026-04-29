@@ -41,8 +41,10 @@ public class Ej6 {
                    String lastName = rs.getString("lastName");
                    String customerName = rs.getString("customerName");
                    double amount = rs.getDouble("amount");
-                    System.out.printf("numeroEmpleado: %d |  apellido1: %s| apellido2: %s | Cliente: %s | importe: %f.2f€%n",
-                            numeroEmpleado, firstName, lastName, customerName, amount);
+                    System.out.printf(
+                            "numeroEmpleado: %d | apellido1: %s | apellido2: %s | Cliente: %s | importe: %.2f€%n",
+                            numeroEmpleado, firstName, lastName, customerName, amount
+                    );
                 }
             }catch (SQLException e){
                 System.err.println("Error durante la operación con la base de datos ");

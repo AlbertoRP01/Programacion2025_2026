@@ -1,0 +1,4 @@
+package ejerciciorepaso;
+
+public record MatriculaDTO(String numeros, String letras) {
+}

@@ -14,7 +14,7 @@ import java.nio.file.StandardOpenOption;
 public class Main {
     static void main(String[] args) {
         Path p = Path.of("src/main/java/ej3objetosanidadosyexclusiondecampos/salida/estudantes.json");
-        Direccion direccion = new Direccion("Avenida España 197", "Huelva", 21410);
+        Direccion direccion = new Direccion("Avenida lepe", "Huelva", 53432);
         Usuario usuario = new Usuario("pepe", "1234", "pepe@gmail.com", direccion);
         exportarAJson(direccion, usuario, p);
     }

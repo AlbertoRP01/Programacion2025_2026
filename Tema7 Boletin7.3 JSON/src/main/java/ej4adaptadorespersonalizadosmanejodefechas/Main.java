@@ -2,6 +2,7 @@ package ej4adaptadorespersonalizadosmanejodefechas;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import ej1.LocalDateAdapter;
 
 import java.io.BufferedReader;
 import java.io.File;

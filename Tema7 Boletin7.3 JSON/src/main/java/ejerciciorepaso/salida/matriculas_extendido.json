@@ -1,0 +1,42 @@
+[
+  {
+    "numeros": "5678",
+    "letras": "XYZ"
+  },
+  {
+    "numeros": "9999",
+    "letras": "ZZZ"
+  },
+  {
+    "numeros": "4321",
+    "letras": "HJK"
+  },
+  {
+    "numeros": "8765",
+    "letras": "LMN"
+  },
+  {
+    "numeros": "2222",
+    "letras": "BBB"
+  },
+  {
+    "numeros": "3333",
+    "letras": "CCC"
+  },
+  {
+    "numeros": "4444",
+    "letras": "DDD"
+  },
+  {
+    "numeros": "6666",
+    "letras": "FFF"
+  },
+  {
+    "numeros": "7777",
+    "letras": "GGG"
+  },
+  {
+    "numeros": "8888",
+    "letras": "HHH"
+  }
+]
